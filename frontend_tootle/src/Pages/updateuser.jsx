@@ -105,7 +105,8 @@ const UpdateUserForm = ({ userData, onUserUpdated }) => {
             value={formData.password}
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded"
-            placeholder="Leave empty to keep current password"
+            placeholder="Change your password too"
+            required
           />
         </div>
 
