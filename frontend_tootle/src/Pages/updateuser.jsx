@@ -40,7 +40,7 @@ const UpdateUserForm = ({ userData, onUserUpdated }) => {
       }
 
       const response = await axios.put(
-        `https://tootle-dashboard.onrender.com/api/updateuser/updateuser/${userData.id}`,
+        `http://localhost:5000/api/updateuser/updateuser/${userData.id}`,
         updateData
       );
       console.log("User updated:", response.data);
