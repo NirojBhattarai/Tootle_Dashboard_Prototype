@@ -17,7 +17,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/viewuser/viewuser"
+        "https://tootle-dashboard.onrender.com/api/viewuser/viewuser"
       );
       setUsers(response.data);
       setLoading(false);
@@ -34,7 +34,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/deleteuser/deleteuser/${id}`
+        `https://tootle-dashboard.onrender.com/api/deleteuser/deleteuser/${id}`
       );
       setUsers(users.filter((user) => user.id !== id));
     } catch (err) {

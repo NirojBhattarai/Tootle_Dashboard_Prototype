@@ -22,7 +22,7 @@ const AddUserForm = ({ onUserAdded }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/adduser/adduser",
+        "https://tootle-dashboard.onrender.com/api/adduser/adduser",
         formData
       );
       console.log("User added:", response.data);
