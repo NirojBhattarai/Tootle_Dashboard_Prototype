@@ -63,9 +63,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold text-white mb-4 sm:mb-0">
           Tootle Admin Dashboard
         </h1>
         <button
@@ -74,7 +74,7 @@ const Dashboard = () => {
             setIsUpdating(false);
             setSelectedUser(null);
           }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-white hover:bg-gray-100 text-blue-500 font-bold py-2 px-4 rounded shadow-md transition-all duration-300 ease-in-out"
         >
           {showForm ? "Close Form" : isUpdating ? "Edit User" : "Add User"}
         </button>
@@ -92,13 +92,13 @@ const Dashboard = () => {
 
       {loading ? (
         <div className="text-center py-4">
-          <p>Loading users...</p>
+          <p className="text-white">Loading users...</p>
         </div>
       ) : (
-        <div className="bg-white shadow-md rounded overflow-hidden">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden mt-2">
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+              <tr className="bg-gradient-to-r from-gray-800 to-gray-600 text-white uppercase text-sm leading-normal">
                 <th className="py-3 px-6 text-left">Name</th>
                 <th className="py-3 px-6 text-left">Email</th>
                 <th className="py-3 px-6 text-left">Role</th>
@@ -106,11 +106,11 @@ const Dashboard = () => {
                 <th className="py-3 px-6 text-center">Actions</th>
               </tr>
             </thead>
-            <tbody className="text-gray-600 text-sm font-light">
+            <tbody className="text-gray-700 text-sm font-light">
               {users.map((user) => (
                 <tr
                   key={user.id}
-                  className="border-b border-gray-200 hover:bg-gray-100"
+                  className="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200"
                 >
                   <td className="py-3 px-6 text-left whitespace-nowrap">
                     {user.NAME}
@@ -121,13 +121,13 @@ const Dashboard = () => {
                   <td className="py-3 px-6 text-center">
                     <button
                       onClick={() => handleUpdate(user)}
-                      className="text-yellow-500 hover:text-yellow-700 mx-2"
+                      className="text-yellow-500 hover:text-yellow-700 mx-2 transition-colors duration-200"
                     >
                       <FontAwesomeIcon icon={faEdit} />
                     </button>
                     <button
                       onClick={() => handleDelete(user.id)}
-                      className="text-red-500 hover:text-red-700 mx-2"
+                      className="text-red-500 hover:text-red-700 mx-2 transition-colors duration-200"
                     >
                       <FontAwesomeIcon icon={faTrash} />
                     </button>
