@@ -113,7 +113,7 @@ const Dashboard = () => {
                   className="border-b border-gray-200 hover:bg-gray-100"
                 >
                   <td className="py-3 px-6 text-left whitespace-nowrap">
-                    {user.name}
+                    {user.NAME}
                   </td>
                   <td className="py-3 px-6 text-left">{user.email}</td>
                   <td className="py-3 px-6 text-left">{user.role}</td>
